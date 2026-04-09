@@ -4,18 +4,86 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 
-const navLinks = [
-  { label: "Fonctionnalités", href: "#features" },
-  { label: "Comment ça marche", href: "#how-it-works" },
-  { label: "Galerie", href: "#gallery" },
-  { label: "Témoignages", href: "#testimonials" },
+const locales = [
+  { code: "fr", label: "FR", flag: "🇫🇷" },
+  { code: "en", label: "EN", flag: "🇬🇧" },
+  { code: "es", label: "ES", flag: "🇪🇸" },
+  { code: "it", label: "IT", flag: "🇮🇹" },
 ];
 
+function LocaleSwitcher() {
+  const pathname = usePathname();
+  const router = useRouter();
+  const [open, setOpen] = useState(false);
+
+  const currentLocale = locales.find((l) =>
+    pathname === `/${l.code}` || pathname.startsWith(`/${l.code}/`)
+  ) ?? locales[0];
+
+  const switchLocale = (code: string) => {
+    setOpen(false);
+    const segments = pathname.split("/").filter(Boolean);
+    const isLocalePrefix = locales.some((l) => l.code !== "fr" && segments[0] === l.code);
+    const rest = isLocalePrefix ? segments.slice(1) : segments;
+    const newPath = code === "fr" ? `/${rest.join("/")}` : `/${code}${rest.length ? `/${rest.join("/")}` : ""}`;
+    router.push(newPath || "/");
+  };
+
+  return (
+    <div className="relative">
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex items-center gap-1.5 text-xs font-semibold text-white/50 hover:text-white transition-colors px-2 py-1 rounded-lg border border-white/10 hover:border-white/20"
+      >
+        <span>{currentLocale.flag}</span>
+        <span>{currentLocale.label}</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-3 h-3">
+          <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -8, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -8, scale: 0.95 }}
+            transition={{ duration: 0.15 }}
+            className="absolute right-0 top-full mt-2 bg-[#1a1a1a] border border-white/10 rounded-xl overflow-hidden shadow-xl z-50 min-w-[100px]"
+          >
+            {locales.map((l) => (
+              <button
+                key={l.code}
+                onClick={() => switchLocale(l.code)}
+                className={`w-full flex items-center gap-2 px-4 py-2.5 text-sm hover:bg-white/5 transition-colors ${
+                  currentLocale.code === l.code ? "text-[#FC4C02]" : "text-white/70"
+                }`}
+              >
+                <span>{l.flag}</span>
+                <span className="font-medium">{l.label}</span>
+              </button>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
 export function Navbar() {
+  const t = useTranslations("nav");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navLinks = [
+    { label: t("features"), href: "#features" },
+    { label: t("howItWorks"), href: "#how-it-works" },
+    { label: t("gallery"), href: "#gallery" },
+    { label: t("testimonials"), href: "#testimonials" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -61,20 +129,21 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* CTA */}
+          {/* CTA + locale switcher */}
           <div className="hidden md:flex items-center gap-3">
+            <LocaleSwitcher />
             <Link
               href="https://app.runmemories.com"
               className="text-sm text-white/70 hover:text-white transition-colors font-medium"
             >
-              Se connecter
+              {t("login")}
             </Link>
             <MagneticButton>
               <Link
                 href="https://app.runmemories.com"
                 className="inline-flex items-center gap-2 bg-[#FC4C02] hover:bg-[#d63a00] text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors duration-200 btn-glow"
               >
-                Créer mon poster
+                {t("cta")}
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
                   <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -113,13 +182,16 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="https://app.runmemories.com"
-                onClick={() => setMobileOpen(false)}
-                className="mt-2 w-full text-center bg-[#FC4C02] hover:bg-[#d63a00] text-white font-semibold py-3 rounded-lg transition-colors"
-              >
-                Créer mon poster
-              </Link>
+              <div className="flex items-center justify-between mt-1">
+                <LocaleSwitcher />
+                <Link
+                  href="https://app.runmemories.com"
+                  onClick={() => setMobileOpen(false)}
+                  className="bg-[#FC4C02] hover:bg-[#d63a00] text-white font-semibold py-2.5 px-5 rounded-lg transition-colors"
+                >
+                  {t("cta")}
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}

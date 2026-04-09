@@ -1,0 +1,216 @@
+{
+  "nav": {
+    "features": "Features",
+    "howItWorks": "How it works",
+    "gallery": "Gallery",
+    "testimonials": "Reviews",
+    "login": "Sign in",
+    "cta": "Create my poster"
+  },
+  "hero": {
+    "badge": "New — Connect Strava in 1 click",
+    "headline1": "Turn every",
+    "headline2": "race into",
+    "headline3": "a personalised poster",
+    "subtitle": "Import your GPX trace from Strava, customise your poster with dozens of styles, and download your high-quality PDF instantly. Marathon, trail, ultra — every race deserves to be framed.",
+    "cta": "Create my free poster",
+    "cta2": "See how it works",
+    "microcopy": "Free preview · PDF €9 · Instant download",
+    "stats": [
+      { "value": "10,000+", "label": "posters created" },
+      { "value": "4.9/5", "label": "customer rating" },
+      { "value": "€9", "label": "per PDF poster" }
+    ],
+    "previewLabel": "Preview of some RunMemories creations — infinitely customisable"
+  },
+  "problem": {
+    "label": "The problem",
+    "headline": "Honestly — is this really how you want to remember your races?",
+    "subtitle": "You trained for months. You suffered. You finished. That moment deserves to be celebrated — not buried in your phone.",
+    "cta": "Change that now",
+    "microcopy": "Free preview, no credit card required",
+    "pains": [
+      {
+        "icon": "📸",
+        "title": "Race photos pile up on your phone",
+        "desc": "Hundreds of blurry shots, never looked at, never shared. Your 4-hour marathon deserves better than a finish-line selfie."
+      },
+      {
+        "icon": "🏅",
+        "title": "The medal collects dust in a drawer",
+        "desc": "You put it away after the race. It doesn't tell the story — the 3 months of training, the pain at km 38, the pride at the finish."
+      },
+      {
+        "icon": "💭",
+        "title": "You want to share your achievement, but Strava screenshots look terrible",
+        "desc": "An app screenshot doesn't do justice to what you accomplished. It's not what you want to see every morning on your wall."
+      }
+    ]
+  },
+  "howItWorks": {
+    "label": "How it works",
+    "headline": "Your poster in",
+    "headlineAccent": "3 steps",
+    "headlineSub": "in less than 5 minutes",
+    "subtitle": "Get a race poster with zero technical skills. The editor does all the work.",
+    "cta": "Start now — it's free",
+    "ctaSub": "Or",
+    "ctaSubLink": "browse the poster gallery",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Import your activity",
+        "desc": "Connect Strava in 1 click or import a GPX/KML file from Garmin, Apple Watch, Polar or Suunto. Your trace appears instantly on the map.",
+        "detail": "Wondering if your format is compatible — yes, almost all GPS devices are supported."
+      },
+      {
+        "number": "02",
+        "title": "Customise your poster",
+        "desc": "Choose from dozens of map styles (satellite, terrain, minimal, watercolour...), adjust colours, typography, layout. Add your name, distance, time.",
+        "detail": "Every setting updates in real time — you see exactly what you'll download."
+      },
+      {
+        "number": "03",
+        "title": "Download your PDF",
+        "desc": "Secure payment €9 via Stripe. Instant high-resolution PDF download. Print at home or at a local printer — A3, A2 or A1 format.",
+        "detail": "The PDF is high-resolution (300 DPI) — perfect for large format printing."
+      }
+    ]
+  },
+  "features": {
+    "label": "Features",
+    "headline": "Everything you need to create",
+    "headlineAccent": "the perfect poster",
+    "subtitle": "A professional editor, without the complexity. Everything you need to turn your GPX into a personalised race poster.",
+    "items": [
+      {
+        "title": "High-precision map",
+        "desc": "GPS trace faithful to your route. Choose from 15+ map styles: satellite, terrain, minimal, vintage, night...",
+        "tag": "Mapbox"
+      },
+      {
+        "title": "Varied layouts",
+        "desc": "Portrait or landscape, full-bleed or with margins, trace only or with elevation profile. Dozens of combinations possible.",
+        "tag": "Layouts"
+      },
+      {
+        "title": "Pro typography",
+        "desc": "100+ Google Fonts available. Edit size, colour, weight, spacing. Everything you type updates in real time.",
+        "tag": "Typo"
+      },
+      {
+        "title": "Elevation graph",
+        "desc": "Display your altitude profile in style. Customise colours, graph height, and style (line or area).",
+        "tag": "Altitude"
+      },
+      {
+        "title": "Multi-activity",
+        "desc": "Combine multiple runs on one poster. Perfect for stage challenges, training series, or running partners.",
+        "tag": "Multi"
+      },
+      {
+        "title": "Ready-to-use templates",
+        "desc": "Start with a stunning design and adapt it. Templates are created by designers — you start ahead.",
+        "tag": "Templates"
+      }
+    ]
+  },
+  "gallery": {
+    "label": "Gallery",
+    "headline": "Dozens of styles,",
+    "headlineAccent": "one outcome",
+    "headlineSub": "your route, your personality",
+    "subtitle": "From minimalist to colourful, vintage to high-tech — click a style to create it with your GPX.",
+    "cta": "See all styles in the editor",
+    "ctaBottom": "All these styles are free in the editor — PDF €9",
+    "ctaBottomBtn": "Create my poster now — €9",
+    "hoverLabel": "Create this style →"
+  },
+  "testimonials": {
+    "label": "Reviews",
+    "headline": "Why",
+    "headlineSuffix": "runners love RunMemories",
+    "ratingText": "from 847 reviews",
+    "stats": [
+      { "icon": "🏆", "label": "Posters created", "suffix": "+" },
+      { "icon": "⭐", "label": "Average rating", "suffix": "/5" },
+      { "icon": "🌍", "label": "Countries", "suffix": "+" },
+      { "icon": "🔄", "label": "Satisfied customers", "suffix": "%" }
+    ]
+  },
+  "urgency": {
+    "label": "Join the community",
+    "headline": "These runners already have their poster.",
+    "headlineAccent": "What about you?",
+    "subtitle": "Every week, hundreds of runners turn their achievement into a poster. While you're hesitating, their marathon hangs proudly on the wall. Your next race won't wait.",
+    "cta": "Create my poster now",
+    "microcopy": "Free preview · PDF €9 · Instant download",
+    "guarantees": [
+      { "icon": "💳", "text": "Secure Stripe payment" },
+      { "icon": "🖨️", "text": "300 DPI high-resolution PDF" },
+      { "icon": "⚡", "text": "Instant download" },
+      { "icon": "🖼️", "text": "A3, A2, A1 format" },
+      { "icon": "🔄", "text": "Satisfaction guaranteed" },
+      { "icon": "🌍", "text": "100% online editor" }
+    ]
+  },
+  "skeptic": {
+    "label": "Not convinced yet?",
+    "headline": "Start by",
+    "headlineAccent": "previewing for free",
+    "subtitle": "You don't need to decide now. Import your GPX, play with the editor, see what your route looks like. Pay only if you're blown away.",
+    "importGpx": "Import my GPX for free",
+    "importGpxSub": "No account, no card — see the result immediately",
+    "strava": "Connect Strava in 1 click",
+    "stravaSub": "Your activities imported automatically",
+    "trust": "Secure Stripe payment · Private data",
+    "faqTitle": "Frequently asked questions",
+    "faqs": [
+      {
+        "q": "Is my GPS/file format compatible?",
+        "a": "Yes. RunMemories supports GPX, KML, FIT — formats from Garmin, Apple Watch, Suunto, Polar, Wahoo. Or connect Strava directly in 1 click."
+      },
+      {
+        "q": "What format do I get?",
+        "a": "You download a high-resolution PDF (300 DPI) immediately after payment. Print at home, at a local printer, or online in A3, A2 or A1 format."
+      },
+      {
+        "q": "What if I don't like it?",
+        "a": "Satisfaction guaranteed within 30 days, no questions asked. We refund in full if the result doesn't meet your expectations."
+      },
+      {
+        "q": "How much does it cost?",
+        "a": "Preview is free and unlimited. Downloading the high-resolution PDF costs €9. One time, no subscription."
+      },
+      {
+        "q": "Can I give a RunMemories poster as a gift?",
+        "a": "Yes, and it's probably the best gift for a runner. You can also create the poster from someone else's Strava activity."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Turn your races into personalised posters. Import your GPX, customise, download your PDF. Your achievement deserves its frame.",
+    "links": {
+      "Product": [
+        { "label": "Poster editor", "href": "https://app.runmemories.com" },
+        { "label": "Style gallery", "href": "#gallery" },
+        { "label": "Features", "href": "#features" },
+        { "label": "How it works", "href": "#how-it-works" }
+      ],
+      "Resources": [
+        { "label": "Running blog", "href": "https://runmemories.com/blog/" },
+        { "label": "Race calendar", "href": "https://race.runmemories.com/fr" },
+        { "label": "Poster catalogue", "href": "https://runmemories.com/produits/" },
+        { "label": "Contact", "href": "https://runmemories.com/contact/" }
+      ],
+      "Legal": [
+        { "label": "Legal notice", "href": "#" },
+        { "label": "Privacy policy", "href": "#" },
+        { "label": "Terms of service", "href": "#" }
+      ]
+    },
+    "copyright": "All rights reserved.",
+    "madeWith": "Made with",
+    "madeBy": "by runners, for runners"
+  }
+}

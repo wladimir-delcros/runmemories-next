@@ -1,0 +1,216 @@
+{
+  "nav": {
+    "features": "Funcionalidades",
+    "howItWorks": "Cómo funciona",
+    "gallery": "Galería",
+    "testimonials": "Opiniones",
+    "login": "Iniciar sesión",
+    "cta": "Crear mi póster"
+  },
+  "hero": {
+    "badge": "Nuevo — Conecta Strava en 1 clic",
+    "headline1": "Convierte cada",
+    "headline2": "carrera en",
+    "headline3": "un póster personalizado",
+    "subtitle": "Importa tu traza GPX desde Strava, personaliza tu póster con decenas de estilos y descarga tu PDF de alta calidad al instante. Maratón, trail, ultra — cada carrera merece su marco.",
+    "cta": "Crear mi póster gratis",
+    "cta2": "Ver cómo funciona",
+    "microcopy": "Vista previa gratis · PDF 9€ · Descarga instantánea",
+    "stats": [
+      { "value": "10.000+", "label": "pósteres creados" },
+      { "value": "4,9/5", "label": "satisfacción del cliente" },
+      { "value": "9€", "label": "por póster PDF" }
+    ],
+    "previewLabel": "Vista previa de algunas creaciones RunMemories — infinitamente personalizables"
+  },
+  "problem": {
+    "label": "El problema",
+    "headline": "Sinceramente — ¿es así como quieres recordar tus carreras?",
+    "subtitle": "Entrenaste durante meses. Sufriste. Terminaste. Ese momento merece ser celebrado — no enterrado en las profundidades de tu teléfono.",
+    "cta": "Cambiar eso ahora",
+    "microcopy": "Vista previa gratis, sin tarjeta de crédito",
+    "pains": [
+      {
+        "icon": "📸",
+        "title": "Las fotos de carrera se acumulan en tu teléfono",
+        "desc": "Cientos de fotos borrosas, nunca vistas, nunca compartidas. Tu maratón de 4 horas merece algo mejor que una foto de meta."
+      },
+      {
+        "icon": "🏅",
+        "title": "La medalla coge polvo en un cajón",
+        "desc": "La guardaste después de la carrera. No cuenta la historia — los 3 meses de entrenamiento, el dolor en el km 38, el orgullo en la llegada."
+      },
+      {
+        "icon": "💭",
+        "title": "Quieres compartir tu logro, pero las capturas de Strava quedan mal",
+        "desc": "Una captura de pantalla no le hace justicia a lo que lograste. No es lo que quieres ver cada mañana en tu pared."
+      }
+    ]
+  },
+  "howItWorks": {
+    "label": "Cómo funciona",
+    "headline": "Tu póster en",
+    "headlineAccent": "3 pasos",
+    "headlineSub": "en menos de 5 minutos",
+    "subtitle": "Obtén un póster de tu carrera sin ningún conocimiento técnico. El editor hace todo el trabajo.",
+    "cta": "Empezar ahora — es gratis",
+    "ctaSub": "O",
+    "ctaSubLink": "explora la galería de pósteres",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Importa tu actividad",
+        "desc": "Conecta Strava en 1 clic o importa un archivo GPX/KML desde Garmin, Apple Watch, Polar o Suunto. Tu traza aparece al instante en el mapa.",
+        "detail": "¿Te preguntas si tu formato es compatible? Sí, casi todos los dispositivos GPS son compatibles."
+      },
+      {
+        "number": "02",
+        "title": "Personaliza tu póster",
+        "desc": "Elige entre decenas de estilos de mapa (satélite, terreno, minimalista, acuarela...), ajusta colores, tipografía, diseño. Añade tu nombre, distancia, tiempo.",
+        "detail": "Cada ajuste se actualiza en tiempo real — ves exactamente lo que vas a descargar."
+      },
+      {
+        "number": "03",
+        "title": "Descarga tu PDF",
+        "desc": "Pago seguro 9€ via Stripe. Descarga instantánea de PDF de alta resolución. Imprime en casa o en una imprenta — formato A3, A2 o A1.",
+        "detail": "El PDF es de alta resolución (300 DPI) — perfecto para impresión en gran formato."
+      }
+    ]
+  },
+  "features": {
+    "label": "Funcionalidades",
+    "headline": "Todo para crear",
+    "headlineAccent": "el póster perfecto",
+    "subtitle": "Un editor profesional, sin la complejidad. Todo lo que necesitas para convertir tu GPX en un póster personalizado.",
+    "items": [
+      {
+        "title": "Mapa de alta precisión",
+        "desc": "Traza GPS fiel a tu recorrido. Elige entre 15+ estilos de mapa: satélite, terreno, minimalista, vintage, noche...",
+        "tag": "Mapbox"
+      },
+      {
+        "title": "Diseños variados",
+        "desc": "Vertical u horizontal, mapa completo o con márgenes, traza sola o con gráfico de desnivel. Decenas de combinaciones posibles.",
+        "tag": "Diseños"
+      },
+      {
+        "title": "Tipografía profesional",
+        "desc": "100+ fuentes de Google Fonts disponibles. Edita tamaño, color, peso, espaciado. Todo lo que escribes se actualiza en tiempo real.",
+        "tag": "Tipografía"
+      },
+      {
+        "title": "Gráfico de desnivel",
+        "desc": "Muestra tu perfil altimétrico con estilo. Personaliza colores, altura del gráfico y estilo (línea o área).",
+        "tag": "Altitud"
+      },
+      {
+        "title": "Multiactividad",
+        "desc": "Combina varias carreras en un mismo póster. Perfecto para retos por etapas, series de entrenamiento o compañeros de carrera.",
+        "tag": "Multi"
+      },
+      {
+        "title": "Plantillas listas para usar",
+        "desc": "Empieza con un diseño ya impresionante y adáptalo. Las plantillas son creadas por diseñadores — comienzas ganando.",
+        "tag": "Plantillas"
+      }
+    ]
+  },
+  "gallery": {
+    "label": "Galería",
+    "headline": "Decenas de estilos,",
+    "headlineAccent": "un solo resultado",
+    "headlineSub": "tu recorrido, tu personalidad",
+    "subtitle": "Del minimalista al colorido, del vintage al high-tech — haz clic en un estilo para crearlo con tu GPX.",
+    "cta": "Ver todos los estilos en el editor",
+    "ctaBottom": "Todos estos estilos son gratuitos en el editor — PDF 9€",
+    "ctaBottomBtn": "Crear mi póster ahora — 9€",
+    "hoverLabel": "Crear este estilo →"
+  },
+  "testimonials": {
+    "label": "Opiniones",
+    "headline": "Por qué",
+    "headlineSuffix": "corredores adoran RunMemories",
+    "ratingText": "de 847 opiniones",
+    "stats": [
+      { "icon": "🏆", "label": "Pósteres creados", "suffix": "+" },
+      { "icon": "⭐", "label": "Valoración media", "suffix": "/5" },
+      { "icon": "🌍", "label": "Países", "suffix": "+" },
+      { "icon": "🔄", "label": "Clientes satisfechos", "suffix": "%" }
+    ]
+  },
+  "urgency": {
+    "label": "Únete a la comunidad",
+    "headline": "Estos corredores ya tienen su póster.",
+    "headlineAccent": "¿Y tú, cuándo?",
+    "subtitle": "Cada semana, cientos de corredores transforman su hazaña en un póster. Mientras dudas, su maratón cuelga orgulloso en su pared. Tu próxima carrera no espera.",
+    "cta": "Crear mi póster ahora",
+    "microcopy": "Vista previa gratis · PDF 9€ · Descarga instantánea",
+    "guarantees": [
+      { "icon": "💳", "text": "Pago seguro con Stripe" },
+      { "icon": "🖨️", "text": "PDF de alta resolución 300 DPI" },
+      { "icon": "⚡", "text": "Descarga instantánea" },
+      { "icon": "🖼️", "text": "Formato A3, A2, A1" },
+      { "icon": "🔄", "text": "Satisfacción garantizada" },
+      { "icon": "🌍", "text": "Editor 100% online" }
+    ]
+  },
+  "skeptic": {
+    "label": "¿Aún no convencido?",
+    "headline": "Empieza por",
+    "headlineAccent": "visualizar gratis",
+    "subtitle": "No necesitas decidirte ahora. Importa tu GPX, juega con el editor, ve cómo queda tu recorrido. Paga solo si quedas impresionado.",
+    "importGpx": "Importar mi GPX gratis",
+    "importGpxSub": "Sin cuenta, sin tarjeta — ver el resultado inmediatamente",
+    "strava": "Conectar Strava en 1 clic",
+    "stravaSub": "Tus actividades importadas automáticamente",
+    "trust": "Pago seguro Stripe · Datos privados",
+    "faqTitle": "Preguntas frecuentes",
+    "faqs": [
+      {
+        "q": "¿Es compatible mi GPS/formato de archivo?",
+        "a": "Sí. RunMemories soporta GPX, KML, FIT — los formatos de Garmin, Apple Watch, Suunto, Polar, Wahoo. O conecta Strava directamente en 1 clic."
+      },
+      {
+        "q": "¿Qué formato recibo?",
+        "a": "Descargas un PDF de alta resolución (300 DPI) inmediatamente después del pago. Puedes imprimirlo en casa, en una imprenta local, o en línea en formato A3, A2 o A1."
+      },
+      {
+        "q": "¿Y si el póster no me gusta?",
+        "a": "Satisfacción garantizada en 30 días, sin preguntas. Reembolso completo si el resultado no cumple tus expectativas."
+      },
+      {
+        "q": "¿Cuánto cuesta?",
+        "a": "La vista previa es gratuita e ilimitada. La descarga del PDF de alta resolución cuesta 9€. Una sola vez, sin suscripción."
+      },
+      {
+        "q": "¿Puedo regalar un póster RunMemories?",
+        "a": "Sí, y probablemente sea el mejor regalo para un corredor. También puedes crear el póster desde la actividad Strava de otra persona."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Transforma tus carreras en pósteres personalizados. Importa tu GPX, personaliza, descarga tu PDF. Tu hazaña merece su marco.",
+    "links": {
+      "Producto": [
+        { "label": "Editor de pósteres", "href": "https://app.runmemories.com" },
+        { "label": "Galería de estilos", "href": "#gallery" },
+        { "label": "Funcionalidades", "href": "#features" },
+        { "label": "Cómo funciona", "href": "#how-it-works" }
+      ],
+      "Recursos": [
+        { "label": "Blog de running", "href": "https://runmemories.com/blog/" },
+        { "label": "Calendario de carreras", "href": "https://race.runmemories.com/fr" },
+        { "label": "Catálogo de pósteres", "href": "https://runmemories.com/produits/" },
+        { "label": "Contacto", "href": "https://runmemories.com/contact/" }
+      ],
+      "Legal": [
+        { "label": "Aviso legal", "href": "#" },
+        { "label": "Política de privacidad", "href": "#" },
+        { "label": "Términos de servicio", "href": "#" }
+      ]
+    },
+    "copyright": "Todos los derechos reservados.",
+    "madeWith": "Hecho con",
+    "madeBy": "por corredores, para corredores"
+  }
+}

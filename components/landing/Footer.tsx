@@ -2,28 +2,12 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-
-const footerLinks = {
-  Produit: [
-    { label: "Éditeur de poster", href: "https://app.runmemories.com" },
-    { label: "Galerie de styles", href: "#gallery" },
-    { label: "Fonctionnalités", href: "#features" },
-    { label: "Comment ça marche", href: "#how-it-works" },
-  ],
-  Ressources: [
-    { label: "Blog running", href: "https://runmemories.com/blog/" },
-    { label: "Calendrier des courses", href: "https://race.runmemories.com/fr" },
-    { label: "Catalogue posters", href: "https://runmemories.com/produits/" },
-    { label: "Contact", href: "https://runmemories.com/contact/" },
-  ],
-  Légal: [
-    { label: "Mentions légales", href: "#" },
-    { label: "Politique de confidentialité", href: "#" },
-    { label: "CGV", href: "#" },
-  ],
-};
+import { useTranslations } from "next-intl";
 
 export function Footer() {
+  const t = useTranslations("footer");
+  const links = t.raw("links") as Record<string, Array<{ label: string; href: string }>>;
+
   return (
     <footer className="relative bg-[#0a0a0a] border-t border-white/8 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 section-divider" />
@@ -44,10 +28,7 @@ export function Footer() {
               </span>
             </Link>
 
-            <p className="text-white/40 text-sm leading-relaxed mb-6 max-w-xs">
-              Transforme tes courses en oeuvres d&apos;art. Importe ton GPX, personnalise,
-              commande. Ton exploit mérite son cadre.
-            </p>
+            <p className="text-white/40 text-sm leading-relaxed mb-6 max-w-xs">{t("tagline")}</p>
 
             {/* Social links */}
             <div className="flex gap-3">
@@ -84,13 +65,13 @@ export function Footer() {
           </div>
 
           {/* Link columns */}
-          {Object.entries(footerLinks).map(([category, links]) => (
+          {Object.entries(links).map(([category, categoryLinks]) => (
             <div key={category}>
               <h4 className="font-heading font-bold text-white/80 text-sm mb-5 uppercase tracking-wider">
                 {category}
               </h4>
               <ul className="space-y-3">
-                {links.map((link) => (
+                {categoryLinks.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
@@ -111,12 +92,12 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-white/25 text-sm">
-              &copy; {new Date().getFullYear()} RunMemories. Tous droits réservés.
+              &copy; {new Date().getFullYear()} RunMemories. {t("copyright")}
             </p>
             <div className="flex items-center gap-2 text-white/25 text-sm">
-              <span>Fait avec</span>
+              <span>{t("madeWith")}</span>
               <span className="text-[#FC4C02]">♥</span>
-              <span>par des coureurs, pour des coureurs</span>
+              <span>{t("madeBy")}</span>
             </div>
           </div>
         </div>

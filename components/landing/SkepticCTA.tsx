@@ -2,31 +2,12 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-
-const faqs = [
-  {
-    q: "Mon GPS/format de fichier est-il compatible ?",
-    a: "Oui. RunMemories supporte GPX, KML, FIT — les formats de Garmin, Apple Watch, Suunto, Polar, Wahoo. Ou connecte directement Strava en 1 clic.",
-  },
-  {
-    q: "Quelle est la qualité d'impression ?",
-    a: "Impression haute résolution sur papier semi-glacé 250g. Le rendu est aussi net que l'image sur l'éditeur — souvent mieux qu'attendu.",
-  },
-  {
-    q: "Et si le poster ne me plaît pas à la réception ?",
-    a: "Retours gratuits sous 30 jours, aucune question posée. On reimprime ou on rembourse intégralement.",
-  },
-  {
-    q: "Combien de temps pour recevoir mon poster ?",
-    a: "Impression sous 24h, livraison suivie sous 48–72h ouvrés en France. Délais légèrement plus longs pour l'international.",
-  },
-  {
-    q: "Puis-je offrir un poster RunMemories en cadeau ?",
-    a: "Oui, et c'est probablement le meilleur cadeau pour un coureur. Tu peux aussi créer le poster depuis l'activité Strava de quelqu'un d'autre.",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export function SkepticCTA() {
+  const t = useTranslations("skeptic");
+  const faqs = t.raw("faqs") as Array<{ q: string; a: string }>;
+
   return (
     <section className="relative py-28 bg-[#0d0d0d] overflow-hidden">
       <div className="absolute top-0 left-0 right-0 section-divider" />
@@ -43,7 +24,7 @@ export function SkepticCTA() {
             >
               <div className="w-8 h-px bg-[#FC4C02]" />
               <span className="text-[#FC4C02] text-sm font-semibold tracking-widest uppercase">
-                Pas encore convaincu ?
+                {t("label")}
               </span>
             </motion.div>
 
@@ -53,10 +34,8 @@ export function SkepticCTA() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              Commence par{" "}
-              <span className="gradient-text">
-                visualiser gratuitement
-              </span>
+              {t("headline")}{" "}
+              <span className="gradient-text">{t("headlineAccent")}</span>
             </motion.h2>
 
             <motion.p
@@ -66,9 +45,7 @@ export function SkepticCTA() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              Tu n&apos;as pas besoin de te décider maintenant. Importe ton GPX,
-              joue avec l&apos;éditeur, vois à quoi ressemble ton parcours.
-              Commande seulement si tu es époustouflé.
+              {t("subtitle")}
             </motion.p>
 
             {/* Alternative CTAs */}
@@ -90,11 +67,9 @@ export function SkepticCTA() {
                 </div>
                 <div>
                   <div className="font-semibold text-white text-sm group-hover:text-[#FC4C02] transition-colors">
-                    Importer mon GPX gratuitement
+                    {t("importGpx")}
                   </div>
-                  <div className="text-white/40 text-xs">
-                    Sans compte, sans CB — voir le résultat immédiatement
-                  </div>
+                  <div className="text-white/40 text-xs">{t("importGpxSub")}</div>
                 </div>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5 text-white/20 group-hover:text-[#FC4C02] ml-auto transition-colors">
                   <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
@@ -112,11 +87,9 @@ export function SkepticCTA() {
                 </div>
                 <div>
                   <div className="font-semibold text-white text-sm group-hover:text-[#FC4C02] transition-colors">
-                    Connecter Strava en 1 clic
+                    {t("strava")}
                   </div>
-                  <div className="text-white/40 text-xs">
-                    Tes activités importées automatiquement
-                  </div>
+                  <div className="text-white/40 text-xs">{t("stravaSub")}</div>
                 </div>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5 text-white/20 group-hover:text-[#FC4C02] ml-auto transition-colors">
                   <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
@@ -135,7 +108,7 @@ export function SkepticCTA() {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-green-400">
                 <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              Paiement sécurisé Stripe · Données privées
+              {t("trust")}
             </motion.div>
           </div>
 
@@ -148,7 +121,7 @@ export function SkepticCTA() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className="font-heading font-bold text-lg text-white/60 mb-6 uppercase tracking-wider text-sm">
-              Questions fréquentes
+              {t("faqTitle")}
             </h3>
             {faqs.map((faq, i) => (
               <details

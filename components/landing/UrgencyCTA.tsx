@@ -2,23 +2,17 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 
-const guarantees = [
-  { icon: "📅", text: "Paiement mensuel, annulation libre" },
-  { icon: "🖨️", text: "Impression haute qualité garantie" },
-  { icon: "🔄", text: "Retours gratuits sous 30 jours" },
-  { icon: "📦", text: "Livraison suivie sous 48–72h" },
-  { icon: "🇫🇷", text: "Fabrication française" },
-  { icon: "🌱", text: "Engagement écologique" },
-];
-
 export function UrgencyCTA() {
+  const t = useTranslations("urgency");
+  const guarantees = t.raw("guarantees") as Array<{ icon: string; text: string }>;
+
   return (
     <section className="relative py-28 bg-[#111] overflow-hidden">
       <div className="absolute top-0 left-0 right-0 section-divider" />
 
-      {/* Background glow */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-[#FC4C02]/8 blur-[150px]" />
       </div>
@@ -32,7 +26,7 @@ export function UrgencyCTA() {
         >
           <div className="w-8 h-px bg-[#FC4C02]" />
           <span className="text-[#FC4C02] text-sm font-semibold tracking-widest uppercase">
-            Rejoins la communauté
+            {t("label")}
           </span>
           <div className="w-8 h-px bg-[#FC4C02]" />
         </motion.div>
@@ -43,9 +37,9 @@ export function UrgencyCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Ces coureurs ont déjà leur poster.
+          {t("headline")}
           <br />
-          <span className="gradient-text">Et toi — c&apos;est pour quand ?</span>
+          <span className="gradient-text">{t("headlineAccent")}</span>
         </motion.h2>
 
         <motion.p
@@ -55,9 +49,7 @@ export function UrgencyCTA() {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          Chaque semaine, des centaines de coureurs transforment leur exploit en poster.
-          Pendant que tu hésites, leur marathon trône dans leur salon.
-          Ton prochain n&apos;attend pas.
+          {t("subtitle")}
         </motion.p>
 
         {/* Guarantees */}
@@ -79,7 +71,7 @@ export function UrgencyCTA() {
           ))}
         </motion.div>
 
-        {/* CTA buttons */}
+        {/* CTA */}
         <motion.div
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
           initial={{ opacity: 0, y: 20 }}
@@ -92,7 +84,7 @@ export function UrgencyCTA() {
               href="https://app.runmemories.com"
               className="inline-flex items-center gap-3 bg-[#FC4C02] hover:bg-[#d63a00] text-white font-black text-lg px-10 py-5 rounded-xl transition-all duration-200 btn-glow"
             >
-              Créer mon poster maintenant
+              {t("cta")}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-5 h-5">
                 <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -107,7 +99,7 @@ export function UrgencyCTA() {
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          Visualisation gratuite · Sans CB · Commande seulement si tu es satisfait
+          {t("microcopy")}
         </motion.p>
       </div>
     </section>
