@@ -73,12 +73,25 @@ export function Footer() {
               <ul className="space-y-3">
                 {categoryLinks.map((link) => (
                   <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-white/40 hover:text-white text-sm transition-colors duration-200"
-                    >
-                      {link.label}
-                    </Link>
+                    {link.href.startsWith("http") ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white/40 hover:text-white text-sm transition-colors duration-200"
+                      >
+                        {link.label}
+                      </a>
+                    ) : link.href.startsWith("#") ? (
+                      <a
+                        href={link.href}
+                        className="text-white/40 hover:text-white text-sm transition-colors duration-200"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <span className="text-white/20 text-sm cursor-not-allowed">{link.label}</span>
+                    )}
                   </li>
                 ))}
               </ul>
