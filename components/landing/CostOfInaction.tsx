@@ -1,30 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { CounterUp } from "@/components/ui/counter-up";
 
-const costs = [
-  {
-    stat: 52,
-    suffix: "h",
-    label: "d'entraînement en moyenne pour un marathon",
-    context: "52h de ta vie pour une médaille qui finit dans un tiroir ?",
-  },
-  {
-    stat: 847,
-    suffix: "",
-    label: "photos de courses dans ton téléphone",
-    context: "Que tu ne regardes jamais. Que tu n'as jamais encadrées.",
-  },
-  {
-    stat: 3,
-    suffix: " fois",
-    label: "fois",
-    context: "Tu remets à plus tard depuis combien de temps d'encadrer ton exploit ?",
-  },
-];
-
 export function CostOfInaction() {
+  const t = useTranslations("costOfInaction");
+
   return (
     <section className="relative py-28 bg-[#0a0a0a] overflow-hidden">
       <div className="absolute inset-0">
@@ -41,7 +23,7 @@ export function CostOfInaction() {
           >
             <div className="w-8 h-px bg-[#FC4C02]" />
             <span className="text-[#FC4C02] text-sm font-semibold tracking-widest uppercase">
-              Le coût de l&apos;inaction
+              {t("label")}
             </span>
             <div className="w-8 h-px bg-[#FC4C02]" />
           </motion.div>
@@ -52,8 +34,7 @@ export function CostOfInaction() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            Combien ça te coûte de{" "}
-            <span className="gradient-text">ne rien faire</span> ?
+            {t("headline")} <span className="gradient-text">{t("headlineAccent")}</span> ?
           </motion.h2>
 
           <motion.p
@@ -63,32 +44,16 @@ export function CostOfInaction() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            Chaque course qui passe est une mémoire qui s&apos;efface.
-            Les souvenirs flous. Les chiffres oubliés. L&apos;émotion qui s&apos;estompe.
+            {t("subtitle")}
           </motion.p>
         </div>
 
         {/* Big stats */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {[
-            {
-              number: 52,
-              suffix: "h",
-              label: "d'entraînement moyen",
-              desc: "52 heures de ta vie pour finir un marathon. Tu mérites mieux qu'une photo floue comme souvenir.",
-            },
-            {
-              number: 847,
-              suffix: "",
-              label: "photos running dans ton téléphone",
-              desc: "Empilées avec tes selfies du dimanche. Jamais regardées. Jamais encadrées. Jamais célébrées.",
-            },
-            {
-              number: 35,
-              suffix: "€",
-              label: "prix d'un poster RunMemories",
-              desc: "Pour immortaliser 52h d'effort. Soit 0,67€ de l'heure d'entraînement investi.",
-            },
+            { number: 52, suffix: "h", labelKey: "stat1Label", descKey: "stat1Desc" },
+            { number: 847, suffix: "", labelKey: "stat2Label", descKey: "stat2Desc" },
+            { number: 9, suffix: "€", labelKey: "stat3Label", descKey: "stat3Desc" },
           ].map((stat, i) => (
             <motion.div
               key={i}
@@ -99,21 +64,17 @@ export function CostOfInaction() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
               <div className="font-heading font-black text-5xl sm:text-6xl text-[#FC4C02] mb-2">
-                <CounterUp
-                  end={stat.number}
-                  suffix={stat.suffix}
-                  duration={2}
-                />
+                <CounterUp end={stat.number} suffix={stat.suffix} duration={2} />
               </div>
               <div className="text-white font-semibold text-sm mb-3 uppercase tracking-wider">
-                {stat.label}
+                {t(stat.labelKey)}
               </div>
-              <p className="text-white/40 text-sm leading-relaxed">{stat.desc}</p>
+              <p className="text-white/40 text-sm leading-relaxed">{t(stat.descKey)}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* Quote / punchline */}
+        {/* Quote */}
         <motion.div
           className="max-w-3xl mx-auto text-center"
           initial={{ opacity: 0, scale: 0.95 }}
@@ -124,12 +85,9 @@ export function CostOfInaction() {
           <div className="bg-gradient-to-r from-[#FC4C02]/10 via-[#FC4C02]/5 to-[#FC4C02]/10 border border-[#FC4C02]/20 rounded-2xl p-8">
             <div className="text-4xl mb-4">🏃‍♂️</div>
             <blockquote className="font-heading font-black text-2xl sm:text-3xl text-white leading-tight mb-4">
-              &ldquo;Tes concurrents ont déjà leur poster encadré au mur.
-              <span className="gradient-text"> Et toi ?</span>&rdquo;
+              &ldquo;{t("quote")}&rdquo;
             </blockquote>
-            <p className="text-white/40 text-sm">
-              Pendant que tu lis ça, 12 coureurs commandent leur poster RunMemories.
-            </p>
+            <p className="text-white/40 text-sm">{t("quoteFootnote")}</p>
           </div>
         </motion.div>
       </div>

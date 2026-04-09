@@ -17,9 +17,18 @@
     "cta2": "Ver cómo funciona",
     "microcopy": "Vista previa gratis · PDF 9€ · Descarga instantánea",
     "stats": [
-      { "value": "10.000+", "label": "pósteres creados" },
-      { "value": "4,9/5", "label": "satisfacción del cliente" },
-      { "value": "9€", "label": "por póster PDF" }
+      {
+        "value": "10.000+",
+        "label": "pósteres creados"
+      },
+      {
+        "value": "4,9/5",
+        "label": "satisfacción del cliente"
+      },
+      {
+        "value": "9€",
+        "label": "por póster PDF"
+      }
     ],
     "previewLabel": "Vista previa de algunas creaciones RunMemories — infinitamente personalizables"
   },
@@ -132,10 +141,26 @@
     "headlineSuffix": "corredores adoran RunMemories",
     "ratingText": "de 847 opiniones",
     "stats": [
-      { "icon": "🏆", "label": "Pósteres creados", "suffix": "+" },
-      { "icon": "⭐", "label": "Valoración media", "suffix": "/5" },
-      { "icon": "🌍", "label": "Países", "suffix": "+" },
-      { "icon": "🔄", "label": "Clientes satisfechos", "suffix": "%" }
+      {
+        "icon": "🏆",
+        "label": "Pósteres creados",
+        "suffix": "+"
+      },
+      {
+        "icon": "⭐",
+        "label": "Valoración media",
+        "suffix": "/5"
+      },
+      {
+        "icon": "🌍",
+        "label": "Países",
+        "suffix": "+"
+      },
+      {
+        "icon": "🔄",
+        "label": "Clientes satisfechos",
+        "suffix": "%"
+      }
     ]
   },
   "urgency": {
@@ -146,12 +171,30 @@
     "cta": "Crear mi póster ahora",
     "microcopy": "Vista previa gratis · PDF 9€ · Descarga instantánea",
     "guarantees": [
-      { "icon": "💳", "text": "Pago seguro con Stripe" },
-      { "icon": "🖨️", "text": "PDF de alta resolución 300 DPI" },
-      { "icon": "⚡", "text": "Descarga instantánea" },
-      { "icon": "🖼️", "text": "Formato A3, A2, A1" },
-      { "icon": "🔄", "text": "Satisfacción garantizada" },
-      { "icon": "🌍", "text": "Editor 100% online" }
+      {
+        "icon": "💳",
+        "text": "Pago seguro con Stripe"
+      },
+      {
+        "icon": "🖨️",
+        "text": "PDF de alta resolución 300 DPI"
+      },
+      {
+        "icon": "⚡",
+        "text": "Descarga instantánea"
+      },
+      {
+        "icon": "🖼️",
+        "text": "Formato A3, A2, A1"
+      },
+      {
+        "icon": "🔄",
+        "text": "Satisfacción garantizada"
+      },
+      {
+        "icon": "🌍",
+        "text": "Editor 100% online"
+      }
     ]
   },
   "skeptic": {
@@ -192,25 +235,72 @@
     "tagline": "Transforma tus carreras en pósteres personalizados. Importa tu GPX, personaliza, descarga tu PDF. Tu hazaña merece su marco.",
     "links": {
       "Producto": [
-        { "label": "Editor de pósteres", "href": "https://app.runmemories.com" },
-        { "label": "Galería de estilos", "href": "#gallery" },
-        { "label": "Funcionalidades", "href": "#features" },
-        { "label": "Cómo funciona", "href": "#how-it-works" }
+        {
+          "label": "Editor de pósteres",
+          "href": "https://app.runmemories.com"
+        },
+        {
+          "label": "Galería de estilos",
+          "href": "#gallery"
+        },
+        {
+          "label": "Funcionalidades",
+          "href": "#features"
+        },
+        {
+          "label": "Cómo funciona",
+          "href": "#how-it-works"
+        }
       ],
       "Recursos": [
-        { "label": "Blog de running", "href": "https://runmemories.com/blog/" },
-        { "label": "Calendario de carreras", "href": "https://race.runmemories.com/fr" },
-        { "label": "Catálogo de pósteres", "href": "https://runmemories.com/produits/" },
-        { "label": "Contacto", "href": "https://runmemories.com/contact/" }
+        {
+          "label": "Blog de running",
+          "href": "https://runmemories.com/blog/"
+        },
+        {
+          "label": "Calendario de carreras",
+          "href": "https://race.runmemories.com/fr"
+        },
+        {
+          "label": "Catálogo de pósteres",
+          "href": "https://runmemories.com/produits/"
+        },
+        {
+          "label": "Contacto",
+          "href": "https://runmemories.com/contact/"
+        }
       ],
       "Legal": [
-        { "label": "Aviso legal", "href": "#" },
-        { "label": "Política de privacidad", "href": "#" },
-        { "label": "Términos de servicio", "href": "#" }
+        {
+          "label": "Aviso legal",
+          "href": "#"
+        },
+        {
+          "label": "Política de privacidad",
+          "href": "#"
+        },
+        {
+          "label": "Términos de servicio",
+          "href": "#"
+        }
       ]
     },
     "copyright": "Todos los derechos reservados.",
     "madeWith": "Hecho con",
     "madeBy": "por corredores, para corredores"
+  },
+  "costOfInaction": {
+    "label": "El coste de la inacción",
+    "headline": "¿Cuánto te cuesta",
+    "headlineAccent": "no hacer nada",
+    "subtitle": "Cada carrera que pasa es un recuerdo que se desvanece. Recuerdos borrosos. Estadísticas olvidadas. Emociones que se apagan.",
+    "stat1Label": "horas de entrenamiento promedio",
+    "stat1Desc": "52 horas de tu vida para terminar un maratón. Te mereces algo mejor que una foto borrosa como recuerdo.",
+    "stat2Label": "fotos de running en tu teléfono",
+    "stat2Desc": "Apiladas con tus selfies del domingo. Nunca vistas. Nunca enmarcadas. Nunca celebradas.",
+    "stat3Label": "precio de un póster PDF RunMemories",
+    "stat3Desc": "Para inmortalizar 52h de esfuerzo. Son 0,17€ por hora de entrenamiento invertido.",
+    "quote": "Otros corredores ya tienen su póster enmarcado en la pared. ¿Y tú?",
+    "quoteFootnote": "Mientras lees esto, 12 corredores están pidiendo su póster RunMemories."
   }
 }
