@@ -200,8 +200,8 @@ function PosterCard({ poster, index }: { poster: (typeof posterStyles)[0]; index
           >
             <svg viewBox="0 0 100 130" className="w-full h-full">
               {/* Glow */}
-              <polyline
-                points={poster.trace}
+              <path
+                d={poster.trace}
                 fill="none"
                 stroke={poster.traceColor}
                 strokeWidth="8"
@@ -210,8 +210,8 @@ function PosterCard({ poster, index }: { poster: (typeof posterStyles)[0]; index
                 opacity="0.15"
               />
               {/* Main trace */}
-              <polyline
-                points={poster.trace}
+              <path
+                d={poster.trace}
                 fill="none"
                 stroke={poster.traceColor}
                 strokeWidth="2.5"

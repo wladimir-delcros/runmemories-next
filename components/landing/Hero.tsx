@@ -242,8 +242,8 @@ export function Hero() {
                 {/* GPS trace */}
                 <div className="absolute inset-0" style={{ padding: "12% 10% 25%" }}>
                   <svg viewBox="0 0 100 130" className="w-full h-full">
-                    <polyline
-                      points={poster.trace}
+                    <path
+                      d={poster.trace}
                       fill="none"
                       stroke={poster.traceColor}
                       strokeWidth="7"
@@ -251,8 +251,8 @@ export function Hero() {
                       strokeLinejoin="round"
                       opacity="0.15"
                     />
-                    <polyline
-                      points={poster.trace}
+                    <path
+                      d={poster.trace}
                       fill="none"
                       stroke={poster.traceColor}
                       strokeWidth="2.5"
