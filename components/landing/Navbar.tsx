@@ -5,7 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
+import { useRouter, usePathname } from "@/i18n/navigation";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 
 const locales = [
@@ -18,19 +19,14 @@ const locales = [
 function LocaleSwitcher() {
   const pathname = usePathname();
   const router = useRouter();
+  const currentLocaleCode = useLocale();
   const [open, setOpen] = useState(false);
 
-  const currentLocale = locales.find((l) =>
-    pathname === `/${l.code}` || pathname.startsWith(`/${l.code}/`)
-  ) ?? locales[0];
+  const currentLocale = locales.find((l) => l.code === currentLocaleCode) ?? locales[0];
 
   const switchLocale = (code: string) => {
     setOpen(false);
-    const segments = pathname.split("/").filter(Boolean);
-    const isLocalePrefix = locales.some((l) => l.code !== "fr" && segments[0] === l.code);
-    const rest = isLocalePrefix ? segments.slice(1) : segments;
-    const newPath = code === "fr" ? `/${rest.join("/")}` : `/${code}${rest.length ? `/${rest.join("/")}` : ""}`;
-    router.push(newPath || "/");
+    router.replace(pathname, { locale: code });
   };
 
   return (
