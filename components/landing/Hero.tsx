@@ -141,116 +141,49 @@ export function Hero() {
           {/* Poster grid mockup */}
           <div className="grid grid-cols-3 gap-3 sm:gap-4 mx-auto max-w-3xl">
             {[
-              {
-                bg: "#e8d5a3",
-                mapBg: "#dcc98a",
-                color: "#1a0a00",
-                streetColor: "#c4aa6a",
-                title: "PARIS",
-                subtitle: "MARATHON",
-                distance: "42.2 KM",
-                time: "3:47:22",
-                rotate: -2,
-                mapStyle: "streets",
-              },
-              {
-                bg: "#0f2027",
-                mapBg: "#162535",
-                color: "#FC4C02",
-                streetColor: "#1e3a4a",
-                title: "TRAIL",
-                subtitle: "DES ALPES",
-                distance: "80 KM",
-                time: "12:34:00",
-                rotate: 0,
-                featured: true,
-                mapStyle: "satellite",
-              },
-              {
-                bg: "#1a0f2e",
-                mapBg: "#251545",
-                color: "#a78bfa",
-                streetColor: "#2d1b5e",
-                title: "NEW YORK",
-                subtitle: "MARATHON",
-                distance: "42.2 KM",
-                time: "4:12:08",
-                rotate: 2,
-                mapStyle: "dark",
-              },
+              { bg: "#F7DF26", mapBg: "#e8cc70", textColor: "#000", traceColor: "#000", streetColor: "#c9a832", waterColor: "#b8a028", title: "PARIS", subtitle: "MARATHON", distance: "42.2 KM", denivelé: "+284m", time: "3:47:22", rotate: -2, trace: "M50,105 C38,98 28,88 26,75 C24,62 34,55 38,45 C42,35 40,25 48,19 C56,13 66,15 72,25 C78,35 75,48 70,57 C65,66 55,68 54,79 C53,90 55,101 50,105Z" },
+              { bg: "#0f0f1a", mapBg: "#12121f", textColor: "#FC4C02", traceColor: "#FC4C02", streetColor: "#1a1a2e", waterColor: "#0d0d18", title: "TRAIL", subtitle: "DES ALPES", distance: "80 KM", denivelé: "+4200m", time: "12:34", rotate: 0, featured: true, trace: "M50,108 C40,101 30,91 28,78 C26,65 30,55 36,48 C42,41 48,35 52,27 C56,19 60,11 68,13 C76,15 80,27 78,39 C76,51 68,57 62,65 C56,73 54,83 56,93 C58,103 56,105 50,108Z" },
+              { bg: "#1e0a3c", mapBg: "#240f48", textColor: "#c084fc", traceColor: "#a855f7", streetColor: "#2d1359", waterColor: "#180a30", title: "NEW YORK", subtitle: "MARATHON", distance: "42.2 KM", denivelé: "+480m", time: "4:12:08", rotate: 2, trace: "M50,107 C36,100 24,88 26,73 C28,58 42,53 46,42 C50,31 48,22 56,16 C64,10 74,14 76,27 C78,40 70,49 64,59 C58,69 58,81 56,93 C54,101 54,108 50,107Z" },
             ].map((poster, i) => (
               <motion.div
                 key={i}
-                className={`relative rounded-lg overflow-hidden poster-shadow ${
-                  poster.featured ? "scale-105 z-10" : "opacity-90"
-                }`}
-                style={{ rotate: poster.rotate, backgroundColor: poster.bg, aspectRatio: "2/3" }}
+                className={`relative rounded-lg overflow-hidden poster-shadow ${poster.featured ? "scale-105 z-10" : "opacity-90"}`}
+                style={{ rotate: poster.rotate, aspectRatio: "2/3" }}
                 whileHover={{ scale: poster.featured ? 1.08 : 1.03, rotate: 0, zIndex: 20 }}
                 transition={{ duration: 0.2 }}
               >
-                {/* Map background texture */}
-                <div className="absolute inset-0" style={{ backgroundColor: poster.mapBg }}>
-                  <svg className="absolute inset-0 w-full h-full opacity-60" viewBox="0 0 100 150" preserveAspectRatio="xMidYMid slice">
-                    {/* Street grid */}
-                    {[10,20,30,40,50,60,70,80,90].map(x => (
-                      <line key={`v${x}`} x1={x} y1="0" x2={x} y2="150" stroke={poster.streetColor} strokeWidth="0.4"/>
-                    ))}
-                    {[10,20,30,40,50,60,70,80,90,100,110,120,130,140].map(y => (
-                      <line key={`h${y}`} x1="0" y1={y} x2="100" y2={y} stroke={poster.streetColor} strokeWidth="0.4"/>
-                    ))}
-                    {/* Diagonal roads */}
-                    <line x1="0" y1="30" x2="60" y2="0" stroke={poster.streetColor} strokeWidth="0.8" opacity="0.7"/>
-                    <line x1="40" y1="150" x2="100" y2="80" stroke={poster.streetColor} strokeWidth="0.8" opacity="0.7"/>
-                    <line x1="0" y1="90" x2="100" y2="60" stroke={poster.streetColor} strokeWidth="1.2" opacity="0.5"/>
-                    {/* Main roads (thicker) */}
-                    <line x1="35" y1="0" x2="35" y2="150" stroke={poster.streetColor} strokeWidth="2" opacity="0.8"/>
-                    <line x1="0" y1="70" x2="100" y2="70" stroke={poster.streetColor} strokeWidth="2" opacity="0.8"/>
-                    {/* Park/water areas */}
-                    <rect x="55" y="20" width="25" height="18" rx="2" fill={poster.streetColor} opacity="0.4"/>
-                    <rect x="8" y="85" width="18" height="25" rx="2" fill={poster.streetColor} opacity="0.3"/>
-                  </svg>
-                </div>
+                {/* Map background */}
+                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 150" preserveAspectRatio="xMidYMid slice">
+                  <rect width="100" height="150" fill={poster.mapBg}/>
+                  {[8,16,24,32,40,48,56,64,72,80,88,96].map(x => <line key={`v${x}`} x1={x} y1="0" x2={x} y2="150" stroke={poster.streetColor} strokeWidth="0.3" opacity="0.8"/>)}
+                  {[10,20,30,40,50,60,70,80,90,100,110,120,130,140].map(y => <line key={`h${y}`} x1="0" y1={y} x2="100" y2={y} stroke={poster.streetColor} strokeWidth="0.3" opacity="0.8"/>)}
+                  <line x1="0" y1="25" x2="55" y2="0" stroke={poster.streetColor} strokeWidth="0.7" opacity="0.9"/>
+                  <line x1="0" y1="85" x2="100" y2="55" stroke={poster.streetColor} strokeWidth="1" opacity="0.6"/>
+                  <line x1="38" y1="0" x2="38" y2="150" stroke={poster.streetColor} strokeWidth="1.8" opacity="0.9"/>
+                  <line x1="0" y1="72" x2="100" y2="72" stroke={poster.streetColor} strokeWidth="1.8" opacity="0.9"/>
+                  <path d={`M0,58 Q25,52 50,60 Q75,68 100,60 L100,76 Q75,84 50,76 Q25,68 0,76 Z`} fill={poster.waterColor} opacity="0.4"/>
+                  <rect x="58" y="18" width="22" height="16" rx="1.5" fill={poster.streetColor} opacity="0.35"/>
+                  <rect x="10" y="88" width="16" height="22" rx="1.5" fill={poster.streetColor} opacity="0.28"/>
+                </svg>
 
                 {/* GPS trace */}
-                <div className="absolute inset-0 flex items-center justify-center p-4">
-                  <svg viewBox="0 0 100 120" className="w-full h-full">
-                    {/* Trace shadow/glow */}
-                    <path
-                      d="M50,105 C32,95 18,75 22,57 C26,39 44,36 50,26 C56,16 63,10 74,13 C85,16 88,32 83,47 C78,62 62,66 57,78 C52,90 57,100 50,105Z"
-                      fill="none"
-                      stroke={poster.color}
-                      strokeWidth="6"
-                      strokeLinecap="round"
-                      opacity="0.15"
-                    />
-                    {/* Main trace */}
-                    <path
-                      d="M50,105 C32,95 18,75 22,57 C26,39 44,36 50,26 C56,16 63,10 74,13 C85,16 88,32 83,47 C78,62 62,66 57,78 C52,90 57,100 50,105Z"
-                      fill="none"
-                      stroke={poster.color}
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                    />
-                    {/* Start/end dots */}
-                    <circle cx="50" cy="105" r="4" fill={poster.color} />
-                    <circle cx="50" cy="105" r="7" fill={poster.color} opacity="0.2" />
-                    <circle cx="50" cy="26" r="2.5" fill={poster.color} opacity="0.7" />
+                <div className="absolute inset-0" style={{ padding: "15% 12% 28%" }}>
+                  <svg viewBox="0 0 100 130" className="w-full h-full">
+                    <path d={poster.trace} fill="none" stroke={poster.traceColor} strokeWidth="7" strokeLinecap="round" opacity="0.15"/>
+                    <path d={poster.trace} fill="none" stroke={poster.traceColor} strokeWidth="2.5" strokeLinecap="round"/>
+                    <circle cx="50" cy="105" r="4.5" fill={poster.traceColor}/>
+                    <circle cx="50" cy="105" r="8" fill={poster.traceColor} opacity="0.15"/>
+                    <circle cx="50" cy="19" r="2.5" fill={poster.traceColor} opacity="0.6"/>
                   </svg>
                 </div>
 
                 {/* Bottom text */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 p-3 text-center"
-                  style={{ background: `linear-gradient(to top, ${poster.bg}ee, transparent)` }}
-                >
-                  <div className="font-heading font-black text-lg leading-none" style={{ color: poster.color }}>
-                    {poster.title}
-                  </div>
-                  <div className="font-heading text-xs font-bold tracking-widest mt-0.5 opacity-70" style={{ color: poster.color }}>
-                    {poster.subtitle}
-                  </div>
-                  <div className="flex justify-between text-[10px] mt-2 px-1 opacity-60" style={{ color: poster.color }}>
+                <div className="absolute bottom-0 left-0 right-0 p-3" style={{ background: `linear-gradient(to top, ${poster.bg} 65%, transparent)` }}>
+                  <div className="font-heading font-black text-base leading-none" style={{ color: poster.textColor }}>{poster.title}</div>
+                  <div className="font-heading text-[9px] font-bold tracking-[0.25em] uppercase mt-0.5 opacity-70" style={{ color: poster.textColor }}>{poster.subtitle}</div>
+                  <div className="flex justify-between text-[8px] mt-1.5 opacity-55" style={{ color: poster.textColor }}>
                     <span>{poster.distance}</span>
+                    <span>{poster.denivelé}</span>
                     <span>{poster.time}</span>
                   </div>
                 </div>
