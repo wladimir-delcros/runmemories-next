@@ -144,7 +144,7 @@ export function Testimonials() {
             <motion.div
               key={i}
               variants={item}
-              className="bg-white/[0.03] border border-white/8 rounded-2xl p-6 hover:border-[#FC4C02]/20 transition-all duration-300 card-hover group"
+              className="bg-gradient-to-br from-white/[0.06] to-white/[0.01] border border-white/10 rounded-2xl p-6 hover:border-[#FC4C02]/30 hover:from-white/[0.08] transition-all duration-300 card-hover group"
             >
               {/* Rating */}
               <div className="flex items-center justify-between mb-4">

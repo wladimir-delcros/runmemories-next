@@ -142,32 +142,41 @@ export function Hero() {
           <div className="grid grid-cols-3 gap-3 sm:gap-4 mx-auto max-w-3xl">
             {[
               {
-                bg: "#F7DF26",
-                color: "#000",
+                bg: "#e8d5a3",
+                mapBg: "#dcc98a",
+                color: "#1a0a00",
+                streetColor: "#c4aa6a",
                 title: "PARIS",
                 subtitle: "MARATHON",
                 distance: "42.2 KM",
                 time: "3:47:22",
                 rotate: -2,
+                mapStyle: "streets",
               },
               {
-                bg: "#1a1a2e",
+                bg: "#0f2027",
+                mapBg: "#162535",
                 color: "#FC4C02",
+                streetColor: "#1e3a4a",
                 title: "TRAIL",
                 subtitle: "DES ALPES",
                 distance: "80 KM",
                 time: "12:34:00",
                 rotate: 0,
                 featured: true,
+                mapStyle: "satellite",
               },
               {
-                bg: "#2d1b69",
+                bg: "#1a0f2e",
+                mapBg: "#251545",
                 color: "#a78bfa",
+                streetColor: "#2d1b5e",
                 title: "NEW YORK",
                 subtitle: "MARATHON",
                 distance: "42.2 KM",
                 time: "4:12:08",
                 rotate: 2,
+                mapStyle: "dark",
               },
             ].map((poster, i) => (
               <motion.div
@@ -175,40 +184,69 @@ export function Hero() {
                 className={`relative rounded-lg overflow-hidden poster-shadow ${
                   poster.featured ? "scale-105 z-10" : "opacity-90"
                 }`}
-                style={{
-                  rotate: poster.rotate,
-                  backgroundColor: poster.bg,
-                  aspectRatio: "2/3",
-                }}
+                style={{ rotate: poster.rotate, backgroundColor: poster.bg, aspectRatio: "2/3" }}
                 whileHover={{ scale: poster.featured ? 1.08 : 1.03, rotate: 0, zIndex: 20 }}
                 transition={{ duration: 0.2 }}
               >
-                {/* Simulated map trace */}
+                {/* Map background texture */}
+                <div className="absolute inset-0" style={{ backgroundColor: poster.mapBg }}>
+                  <svg className="absolute inset-0 w-full h-full opacity-60" viewBox="0 0 100 150" preserveAspectRatio="xMidYMid slice">
+                    {/* Street grid */}
+                    {[10,20,30,40,50,60,70,80,90].map(x => (
+                      <line key={`v${x}`} x1={x} y1="0" x2={x} y2="150" stroke={poster.streetColor} strokeWidth="0.4"/>
+                    ))}
+                    {[10,20,30,40,50,60,70,80,90,100,110,120,130,140].map(y => (
+                      <line key={`h${y}`} x1="0" y1={y} x2="100" y2={y} stroke={poster.streetColor} strokeWidth="0.4"/>
+                    ))}
+                    {/* Diagonal roads */}
+                    <line x1="0" y1="30" x2="60" y2="0" stroke={poster.streetColor} strokeWidth="0.8" opacity="0.7"/>
+                    <line x1="40" y1="150" x2="100" y2="80" stroke={poster.streetColor} strokeWidth="0.8" opacity="0.7"/>
+                    <line x1="0" y1="90" x2="100" y2="60" stroke={poster.streetColor} strokeWidth="1.2" opacity="0.5"/>
+                    {/* Main roads (thicker) */}
+                    <line x1="35" y1="0" x2="35" y2="150" stroke={poster.streetColor} strokeWidth="2" opacity="0.8"/>
+                    <line x1="0" y1="70" x2="100" y2="70" stroke={poster.streetColor} strokeWidth="2" opacity="0.8"/>
+                    {/* Park/water areas */}
+                    <rect x="55" y="20" width="25" height="18" rx="2" fill={poster.streetColor} opacity="0.4"/>
+                    <rect x="8" y="85" width="18" height="25" rx="2" fill={poster.streetColor} opacity="0.3"/>
+                  </svg>
+                </div>
+
+                {/* GPS trace */}
                 <div className="absolute inset-0 flex items-center justify-center p-4">
-                  <svg viewBox="0 0 100 120" className="w-full h-full opacity-70">
+                  <svg viewBox="0 0 100 120" className="w-full h-full">
+                    {/* Trace shadow/glow */}
                     <path
-                      d={`M50,100 C30,90 20,70 25,55 C30,40 45,38 50,30 C55,22 60,15 70,18 C80,21 85,35 80,48 C75,61 60,65 55,75 C50,85 55,95 50,100Z`}
+                      d="M50,105 C32,95 18,75 22,57 C26,39 44,36 50,26 C56,16 63,10 74,13 C85,16 88,32 83,47 C78,62 62,66 57,78 C52,90 57,100 50,105Z"
+                      fill="none"
+                      stroke={poster.color}
+                      strokeWidth="6"
+                      strokeLinecap="round"
+                      opacity="0.15"
+                    />
+                    {/* Main trace */}
+                    <path
+                      d="M50,105 C32,95 18,75 22,57 C26,39 44,36 50,26 C56,16 63,10 74,13 C85,16 88,32 83,47 C78,62 62,66 57,78 C52,90 57,100 50,105Z"
                       fill="none"
                       stroke={poster.color}
                       strokeWidth="2.5"
                       strokeLinecap="round"
                     />
-                    <circle cx="50" cy="100" r="3" fill={poster.color} />
-                    <circle cx="50" cy="30" r="2" fill={poster.color} opacity="0.5" />
+                    {/* Start/end dots */}
+                    <circle cx="50" cy="105" r="4" fill={poster.color} />
+                    <circle cx="50" cy="105" r="7" fill={poster.color} opacity="0.2" />
+                    <circle cx="50" cy="26" r="2.5" fill={poster.color} opacity="0.7" />
                   </svg>
                 </div>
-                {/* Text overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-3 text-center">
-                  <div
-                    className="font-heading font-black text-lg leading-none"
-                    style={{ color: poster.color }}
-                  >
+
+                {/* Bottom text */}
+                <div
+                  className="absolute bottom-0 left-0 right-0 p-3 text-center"
+                  style={{ background: `linear-gradient(to top, ${poster.bg}ee, transparent)` }}
+                >
+                  <div className="font-heading font-black text-lg leading-none" style={{ color: poster.color }}>
                     {poster.title}
                   </div>
-                  <div
-                    className="font-heading text-xs font-bold tracking-widest mt-0.5 opacity-70"
-                    style={{ color: poster.color }}
-                  >
+                  <div className="font-heading text-xs font-bold tracking-widest mt-0.5 opacity-70" style={{ color: poster.color }}>
                     {poster.subtitle}
                   </div>
                   <div className="flex justify-between text-[10px] mt-2 px-1 opacity-60" style={{ color: poster.color }}>

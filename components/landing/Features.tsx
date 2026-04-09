@@ -133,7 +133,7 @@ export function Features() {
             <motion.div
               key={i}
               variants={item}
-              className="group bg-white/[0.03] border border-white/8 rounded-2xl p-6 hover:border-[#FC4C02]/30 hover:bg-white/[0.05] transition-all duration-300 card-hover"
+              className="group bg-gradient-to-br from-white/[0.07] to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#FC4C02]/40 hover:from-[#FC4C02]/[0.06] hover:to-white/[0.02] transition-all duration-300 card-hover"
             >
               <div className="flex items-start gap-4">
                 <div className="w-11 h-11 rounded-xl bg-[#FC4C02]/10 border border-[#FC4C02]/20 flex items-center justify-center text-[#FC4C02] flex-shrink-0 group-hover:bg-[#FC4C02]/20 transition-colors">
