@@ -117,6 +117,9 @@ export async function generateMetadata({
       description: meta.description ?? "",
       images: ["https://runmemories.com/og-image.jpg"],
     },
+    verification: {
+      google: "rDRjvQ9KIJP5i_CGHDMttL45bhkKQDOJZ3RrW8Oe4zk",
+    },
     robots: {
       index: true,
       follow: true,
@@ -127,9 +130,7 @@ export async function generateMetadata({
         "max-snippet": -1,
       },
     },
-    verification: {
-      google: "",
-    },
+
   };
 }
 
